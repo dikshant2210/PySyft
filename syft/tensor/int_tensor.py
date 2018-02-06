@@ -373,3 +373,9 @@ class IntTensor(BaseTensor):
         assert type(new_dim[0]) == int
         self.params_func("view_", new_dim, return_response=False)
         return self
+
+    def unsqueeze(self, dim):
+        return self.params_func("unsqueeze", [dim], return_response=True)
+
+    def unsqueeze_(self, dim):
+        return self.params_func("unsqueeze_", [dim], return_response=True)
